@@ -17,6 +17,12 @@ keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 keymap("n", "<S-k>", ":bnext<cr>", opts)
 keymap("n", "<S-j>", ":bprevious<cr>", opts)
 
+keymap("n", "<C-l>", ":noh<cr>", opts) 
+
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 keymap("v", "p", '"_dP', opts)
+
+
+-- Terminal stuff
+keymap("n", "<leader>t", ":terminal<cr>", opts)
