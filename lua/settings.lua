@@ -15,6 +15,7 @@ local options = {
     showtabline = 2,
     fileencoding = "utf-8",
     cmdheight = 2,
+    termguicolors = true,
 }
 
 for k, v in pairs(options) do 

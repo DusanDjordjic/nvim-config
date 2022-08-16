@@ -83,6 +83,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/dusandjordjic/.local/share/nvim/site/pack/packer/start/popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
+  },
+  sonokai = {
+    loaded = true,
+    path = "/home/dusandjordjic/.local/share/nvim/site/pack/packer/start/sonokai",
+    url = "https://github.com/sainnhe/sonokai"
   }
 }
 

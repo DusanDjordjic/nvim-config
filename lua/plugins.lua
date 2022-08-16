@@ -35,6 +35,7 @@ return packer.startup(function(use)
     use "wbthomason/packer.nvim"
     use "nvim-lua/plenary.nvim"
     use "nvim-lua/popup.nvim"
+    use "sainnhe/sonokai"
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
