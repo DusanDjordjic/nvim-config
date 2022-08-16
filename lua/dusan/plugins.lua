@@ -2,7 +2,7 @@ local fn = vim.fn
 
 -- Auto install packer
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then 
+if fn.empty(fn.glob(install_path)) > 0 then
     PACKER_BOOTSTRAP = fn.system {
         "git",
         "clone",
@@ -36,6 +36,19 @@ return packer.startup(function(use)
     use "nvim-lua/plenary.nvim"
     use "nvim-lua/popup.nvim"
     use "sainnhe/sonokai"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
+    use "hrsh7th/cmp-cmdline"
+    use "hrsh7th/nvim-cmp"
+    use "L3MON4D3/LuaSnip"
+    use "saadparwaiz1/cmp_luasnip"
+    use "David-Kunz/cmp-npm"
+    use "hrsh7th/cmp-nvim-lsp"
+    use "neovim/nvim-lspconfig"
+    use "williamboman/nvim-lsp-installer"
+    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+    use { "nvim-telescope/telescope.nvim", branch = "0.1.x" }
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
