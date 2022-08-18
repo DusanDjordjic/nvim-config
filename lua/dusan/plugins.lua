@@ -49,6 +49,7 @@ return packer.startup(function(use)
     use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
     use { "nvim-telescope/telescope.nvim", branch = "0.1.x" }
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+    use {"akinsho/toggleterm.nvim", tag = 'v2.*' }
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()

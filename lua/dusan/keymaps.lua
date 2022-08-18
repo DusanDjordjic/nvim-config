@@ -30,5 +30,3 @@ keymap("n", "<leader>fg", "<cmd> lua require('telescope.builtin').live_grep(requ
 keymap("n", "<leader>fh", "<cmd> lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_ivy())<cr>", opts)
 keymap("n", "<leader>fb", "<cmd> lua require('telescope.builtin').buffers(require('telescope.themes').get_ivy())<cr>", opts)
 
--- Terminal stuff
-keymap("n", "<leader>t", ":terminal<cr>", opts)
