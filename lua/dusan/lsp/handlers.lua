@@ -77,15 +77,14 @@ local function lsp_keymaps(bufnr)
 	)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 	vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
-	vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format{async=true}' ]])
+	-- vim.cmd([[ command! Format execute 'lua vim.lsp.buf.format{async=true}' ]])
 end
 
 M.on_attach = function(client, bufnr)
 	-- vim.notify(client.name .. " starting...")
 	-- TODO: refactor this into a method that checks if string in list
-	if client.name == "tsserver" then
-		client.resolved_capabilities.document_formatting = false
-	end
+	client.resolved_capabilities.document_formatting = false
+
 	lsp_keymaps(bufnr)
 	lsp_highlight_document(client)
 end
@@ -94,7 +93,7 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not status_ok then
-    vim.notify("Could not find cmp_nvim_lsp")
+	vim.notify("Could not find cmp_nvim_lsp")
 	return
 end
 

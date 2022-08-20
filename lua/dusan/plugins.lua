@@ -50,6 +50,8 @@ return packer.startup(function(use)
     use { "nvim-telescope/telescope.nvim", branch = "0.1.x" }
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
     use {"akinsho/toggleterm.nvim", tag = 'v2.*' }
+    use {"jose-elias-alvarez/null-ls.nvim"}
+    use {"lukas-reineke/lsp-format.nvim"}
 
     if PACKER_BOOTSTRAP then
         require("packer").sync()
