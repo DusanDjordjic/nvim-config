@@ -5,23 +5,22 @@ local options = {
 	number = true,
 	relativenumber = true,
 	syntax = "on",
-    showmode = true,
-    scrolloff = 10,
-    sidescroll = 8,
-    hlsearch = true,
-    ignorecase = false,
-    splitbelow = true,
-    splitright = false,
-    showtabline = 2,
-    fileencoding = "utf-8",
-    cmdheight = 2,
-    termguicolors = true,
+	showmode = true,
+	scrolloff = 10,
+	sidescroll = 8,
+	hlsearch = true,
+	ignorecase = false,
+	splitbelow = true,
+	splitright = false,
+	showtabline = 2,
+	fileencoding = "utf-8",
+	cmdheight = 2,
+	termguicolors = true,
 }
 
-for k, v in pairs(options) do 
+for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
--- Other vim options 
-vim.cmd [[set iskeyword+=-]]
- 
+-- Other vim options
+vim.cmd([[set iskeyword+=-]])

@@ -6,7 +6,7 @@ if not status_ok then
 end
 
 local callback = function(bufnr)
-	vim.lsp.buf.formatting_sync({
+	vim.lsp.buf.format({
 		bufnr = bufnr,
 		filter = function(client)
 			return client.name == "null-ls"
@@ -23,6 +23,10 @@ null_ls.setup({
 		}),
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.formatting.eslint,
+		null_ls.builtins.formatting.clang_format.with({
+			extra_args = { "--style=webkit" },
+		}),
+		null_ls.builtins.diagnostics.checkmake,
 	},
 	-- you can reuse a shared lspconfig on_attach callback here
 	on_attach = function(client, bufnr)

@@ -7,21 +7,42 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Splits and split navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
+keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
 
+-- Make splits even
+-- keymap("n", "<C-E>", "<C-w>=", opts)
+
+-- Resize windows
+keymap("n", "+", "<C-w>2+", opts)
+keymap("n", "_", "<C-w>2-", opts)
+keymap("n", "<", "<C-w>2<", opts)
+keymap("n", ">", "<C-w>2>", opts)
+
+-- Make Splits
+keymap("n", "<leader>V", ":vsp<cr>", opts)
+keymap("n", "<leader>H", ":sp<cr>", opts)
+
+-- Tree view
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
-keymap("n", "<S-k>", ":bnext<cr>", opts)
-keymap("n", "<S-j>", ":bprevious<cr>", opts)
-
+-- Quit highlight
 keymap("n", "<C-q>", ":noh<cr>", opts)
 
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Keep the previous copy
 keymap("v", "p", '"_dP', opts)
+
+-- Copy & Paste from Clipboard
+keymap("v", "<leader>y", '"+y', opts)
+keymap("v", "<leader>p", '"+p', opts)
+keymap("n", "<leader>y", '"+y', opts)
+keymap("n", "<leader>p", '"+p', opts)
 
 -- Telescope stuff
 keymap(
@@ -30,6 +51,11 @@ keymap(
 	"<cmd> lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy())<cr>",
 	opts
 )
+
+vim.keymap.set("n", "<leader>fs", function()
+	require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") })
+end, opts)
+
 keymap(
 	"n",
 	"<leader>fg",
@@ -49,13 +75,3 @@ keymap(
 	"<cmd> lua require('telescope.builtin').buffers(require('telescope.themes').get_ivy())<cr>",
 	opts
 )
-function _G.set_terminal_keymaps()
-	local optss = { buffer = 0 }
-	vim.keymap.set("t", "<esc>", [[<C-\><C-n>]], optss)
-	vim.keymap.set("t", "jk", [[<C-\><C-n>]], optss)
-	vim.keymap.set("t", "<C-h>", [[<Cmd>wincmd h<CR>]], optss)
-	vim.keymap.set("t", "<C-j>", [[<Cmd>wincmd j<CR>]], optss)
-	vim.keymap.set("t", "<C-k>", [[<Cmd>wincmd k<CR>]], optss)
-	vim.keymap.set("t", "<C-l>", [[<Cmd>wincmd l<CR>]], optss)
-end
-vim.cmd("autocmd! TermOpen term://* lua set_terminal_keymaps()")

@@ -76,7 +76,6 @@ gitsigns.setup({
 		end, { expr = true })
 
 		-- Actions
-		map("n", "<leader>hp", gs.preview_hunk)
 		map("n", "<leader>hb", function()
 			gs.blame_line({ full = true })
 		end)
