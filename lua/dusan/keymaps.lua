@@ -26,6 +26,10 @@ keymap("n", ">", "<C-w>2>", opts)
 keymap("n", "<leader>V", ":vsp<cr>", opts)
 keymap("n", "<leader>H", ":sp<cr>", opts)
 
+-- For moving lines up and down
+keymap("v", "J", ":m '>+1<CR>gv=gv", opts)
+keymap("v", "K", ":m '<-2<CR>gv=gv", opts)
+
 -- Tree view
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 

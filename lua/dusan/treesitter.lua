@@ -5,6 +5,8 @@ if not status_ok then
 end
 
 treesitter_conf.setup({
+	ensure_installed = { "c", "lua", "cpp", "rust", "make", "cmake" },
+	sync_install = true,
 	highlight = {
 		enable = true,
 	},
