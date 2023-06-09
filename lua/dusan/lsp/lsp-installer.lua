@@ -15,10 +15,10 @@ lsp_installer.on_server_ready(function(server)
 		opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
 	end
 
-	if server.name == "sumneko_lua" then
-		local sumneko_lua_opts = require("dusan.lsp.settings.sumneko_lua")
-		opts = vim.tbl_deep_extend("force", sumneko_lua_opts, opts)
-	end
+	-- if server.name == "sumneko_lua" then
+	-- 	local sumneko_lua_opts = require("dusan.lsp.settings.sumneko_lua")
+	-- 	opts = vim.tbl_deep_extend("force", sumneko_lua_opts, opts)
+	-- end
 
 	if server.name == "rust_analyzer" then
 		local rust_analyzer_opts = require("dusan.lsp.settings.rust_analyzer")

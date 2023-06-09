@@ -56,9 +56,12 @@ keymap(
 	opts
 )
 
-vim.keymap.set("n", "<leader>fs", function()
-	require("telescope.builtin").grep_string({ search = vim.fn.input("Grep > ") })
-end, opts)
+keymap(
+	"n",
+	"<leader>fs",
+	"<cmd> lua require('telescope.builtin').treesitter(require('telescope.themes').get_ivy())<cr>",
+	opts
+)
 
 keymap(
 	"n",
