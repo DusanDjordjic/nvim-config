@@ -1,3 +1,4 @@
+vim.g.mapleader = " "
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
@@ -7,11 +8,17 @@ vim.opt.syntax = "on"
 vim.opt.showmode = true
 vim.opt.scrolloff = 10
 vim.opt.sidescroll = 8
-vim.opt.hlsearch = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 vim.opt.ignorecase = false
 vim.opt.splitbelow = true
 vim.opt.splitright = false
 vim.opt.showtabline = 2
 vim.opt.fileencoding = "utf-8"
 vim.opt.cmdheight = 2
+vim.opt.backup = false
+vim.opt.swapfile = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir" 
+vim.opt.updatetime = 50
+vim.opt.colorcolumn = "80"
 
