@@ -6,7 +6,7 @@ lsp_zero.on_attach(function(client, bufnr)
     -- see :help lsp-zero-keybindings
     -- to learn the available actions
     lsp_zero.default_keymaps({ buffer = bufnr })
-    vim.keymap.get({ 'n', 'x' }, 'gq', function()
+    vim.keymap.set({ 'n', 'x' }, 'gq', function()
         vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
     end, { buffer = bufnr })
     -- vim.keymap.set('n', 'gr', vim.lsp.buf.hover(), {buffer = bufnr})
