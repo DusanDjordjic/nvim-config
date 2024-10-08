@@ -23,6 +23,7 @@ lsp_zero.format_on_save({
         ['rust_analyzer'] = { 'rust' },
         ['clang'] = { 'c' },
         ['lua_ls'] = { 'lua' },
+        ['tsserver'] = { 'js', 'ts' },
     }
 })
 
@@ -37,7 +38,7 @@ cmp.setup({
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { "gopls", "rust_analyzer", "templ", "clangd", "lua_ls" },
+    ensure_installed = { "gopls", "rust_analyzer", "templ", "clangd", "lua_ls", "tsserver" },
     handlers = {
         function(server_name)
             require('lspconfig')[server_name].setup({})
