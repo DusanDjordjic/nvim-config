@@ -18,7 +18,6 @@ vim.opt.fileencoding = "utf-8"
 vim.opt.cmdheight = 2
 vim.opt.backup = false
 vim.opt.swapfile = false
-vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir" 
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.updatetime = 50
-vim.opt.colorcolumn = "80"
-
+vim.opt.colorcolumn = "120"

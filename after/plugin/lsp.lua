@@ -38,7 +38,7 @@ cmp.setup({
 
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { "gopls", "rust_analyzer", "templ", "clangd", "lua_ls", "tsserver" },
+    ensure_installed = { "gopls", "rust_analyzer", "templ", "clangd", "lua_ls" },
     handlers = {
         function(server_name)
             require('lspconfig')[server_name].setup({})
