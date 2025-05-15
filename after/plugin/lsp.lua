@@ -24,6 +24,7 @@ lsp_zero.format_on_save({
         ['clang'] = { 'c' },
         ['lua_ls'] = { 'lua' },
         ['tsserver'] = { 'js', 'ts' },
+        ['jsonls'] = { 'json' },
     }
 })
 
@@ -45,3 +46,5 @@ require('mason-lspconfig').setup({
         end,
     },
 })
+
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
