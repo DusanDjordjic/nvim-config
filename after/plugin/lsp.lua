@@ -25,6 +25,7 @@ lsp_zero.format_on_save({
         ['lua_ls'] = { 'lua' },
         ['tsserver'] = { 'js', 'ts' },
         ['jsonls'] = { 'json' },
+        ['zls'] = { 'zig' },
     }
 })
 
