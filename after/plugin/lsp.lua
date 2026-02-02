@@ -26,6 +26,7 @@ lsp_zero.format_on_save({
         ['ts_ls'] = { 'js', 'ts' },
         ['jsonls'] = { 'json' },
         ['zls'] = { 'zig' },
+        ['vacuum'] = { 'yaml' },
     }
 })
 

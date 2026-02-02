@@ -114,11 +114,6 @@ _G.packer_plugins = {
     path = "/home/dusan/.local/share/nvim/site/pack/packer/start/mason.nvim",
     url = "https://github.com/mason-org/mason.nvim"
   },
-  neovim = {
-    loaded = true,
-    path = "/home/dusan/.local/share/nvim/site/pack/packer/start/neovim",
-    url = "https://github.com/rose-pine/neovim"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/dusan/.local/share/nvim/site/pack/packer/start/nvim-cmp",
